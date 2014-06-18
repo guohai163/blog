@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value="/contact")
+@RequestMapping(value="contact")
 public class ContactController {
 
 	/**
@@ -18,7 +18,7 @@ public class ContactController {
 	
 	@RequestMapping(value="/blogid/{blogid}")
 	public String GetContactFromCode(@PathVariable("blogid") String blogid, Model model){
-		
-		return "content";
+		logger.info("blogid is :"+blogid);
+		return "contact";
 	}
 }
