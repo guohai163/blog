@@ -30,4 +30,16 @@ public class ContactDAO {
             session.close();
         }
     }
+    
+
+    public Contact selectById(int id){
+    	SqlSession session = sqlSessionFactory.openSession();
+
+		try {
+			Contact contact = (Contact) session.selectOne("Contact.getById",id);
+			return contact;
+		} finally {
+			session.close();
+		}
+    }
 }

@@ -24,14 +24,15 @@ public class ContactController {
 	private static ContactDAO contactDAO;
 	
 	@RequestMapping(value="/blogid/{blogid}")
-	public String GetContactFromCode(@PathVariable("blogid") String blogid, Model model){
+	public String GetContactFromCode(@PathVariable("blogid") int blogid, Model model){
 		logger.info("blogid is :"+blogid);
 		
 
 		contactDAO= new ContactDAO();
 		
-		List<Contact> list = contactDAO.selectAll();
-		
+		Contact contact = contactDAO.selectById(blogid);
+		logger.info("blogid title :"+contact.getIntro());
+		model.addAttribute("contact", contact);
 		return "contact";
 	}
 }

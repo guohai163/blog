@@ -19,14 +19,14 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	
+	<!--
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
+	 -->
 	<context:component-scan base-package="org.guohai.blog" />
-	<!-- 
+	 
 	<beans:bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
 		<beans:property name="resourceLoaderPath" value="/WEB-INF/views" />
 		<beans:property name="configLocation" value="classpath:common/velocity.properties" />
@@ -35,6 +35,7 @@
 	<beans:bean id="velocityViewResolver"
 		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
 		<beans:property name="suffix" value=".vm" />
+		<beans:property name="contentType" value="text/html;charset=UTF-8" />
 	</beans:bean>
-	 -->
+	
 </beans:beans>

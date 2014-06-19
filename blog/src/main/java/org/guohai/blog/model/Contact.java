@@ -14,4 +14,13 @@ public class Contact {
 	}
 
 	public Contact(){}
+	
+	public String getTitle(){
+		return title;
+	}
+	
+
+	public String getIntro(){
+		return intro;
+	}
 }

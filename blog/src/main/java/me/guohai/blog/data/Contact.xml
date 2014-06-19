@@ -5,12 +5,15 @@
     
     <mapper namespace="Contact">
     	<resultMap type="Contact" id="result">
-    		<result property="code" column="code"/>
-    		<result property="title" column="Title"/>
-    		<result property="intro" column="Intro"/>
+    		<result property="code" column="ID"/>
+    		<result property="title" column="post_title"/>
+    		<result property="intro" column="post_content"/>
     	</resultMap>
     
     	<select id="getAll" resultMap="result">
-    		SELECT * FROM ghb_content limit 0,10
+    		SELECT * FROM wp_posts limit 0,10
+    	</select>
+    	<select id="getById" parameterType="int" resultMap="result">
+    		SELECT * FROM  wp_posts WHERE ID=#{id}
     	</select>
     </mapper>
