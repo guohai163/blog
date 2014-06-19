@@ -35,4 +35,12 @@ public class ContactController {
 		model.addAttribute("contact", contact);
 		return "contact";
 	}
+	
+	@RequestMapping(value="/")
+	public String GetContact(Model model){
+		contactDAO= new ContactDAO();
+		List<Contact> list = contactDAO.selectAll();
+		model.addAttribute("list", list);
+		return "contact_list";
+	}
 }

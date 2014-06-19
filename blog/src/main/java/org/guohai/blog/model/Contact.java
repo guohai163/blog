@@ -18,7 +18,10 @@ public class Contact {
 	public String getTitle(){
 		return title;
 	}
-	
+
+	public int getCode(){
+		return code;
+	}
 
 	public String getIntro(){
 		return intro;

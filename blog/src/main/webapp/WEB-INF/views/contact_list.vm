@@ -1,0 +1,6 @@
+#foreach($contact in $list)
+
+<a href="/blog/contact/blogid/${contact.code}">$contact.title</a>
+	
+	<br/>
+#end
