@@ -11,7 +11,7 @@
     	</resultMap>
     
     	<select id="getAll" resultMap="result">
-    		SELECT * FROM wp_posts order by ID desc limit 0,10 
+    		SELECT * FROM wp_posts WHERE post_type='post' order by ID desc limit 0,20 
     	</select>
     	<select id="getById" parameterType="int" resultMap="result">
     		SELECT * FROM  wp_posts WHERE ID=#{id}

@@ -1,0 +1,191 @@
+@CHARSET "UTF-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: x-large;
+	height: 100%;
+	line-height: 1.5;
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #fff;
+	height: 100%;
+	-ms-word-wrap: break-all;
+	word-wrap:     break-word;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+li li {
+	margin-left: 1.5em;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border: 0;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+td {
+	background: rgba(51, 71, 61, 0.05);
+	padding: 0.5em;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+blockquote,
+q {
+	quotes: "" "";
+	-webkit-hyphens: none;
+	-moz-hyphens:    none;
+	-ms-hyphens:     none;
+	hyphens:         none;
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a > img {
+	border: 0;
+	vertical-align: middle;
+}
+
+
+/* =Global
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #33473d;
+	font: 400 0.83333333rem/1.5 "Lato","proxima-nova","Helvetica Neue Light","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	color: #774553;
+	clear: both;
+	font: 700 2.2rem/1.5 "Aleo","Skolar","ff-tisa-web-pro","Georgia",serif;
+}
+h1 {
+	font-size: 2.75rem;
+	line-height: 1;
+	margin-bottom: 0.5em;
+}
+h2 {
+	font-size: 1.5rem;
+	line-height: 1.333333333333333;
+	margin-bottom: 0.6666666666666667em;
+}
+h3 {
+	font-size: 1rem;
+	line-height: 1;
+	margin-bottom: 1em;
+}
+h4 {
+	font-size: 0.875rem;
+	line-height: 1.142857142857;
+	margin-bottom: 1.142857142857em;
+}
+h5 {
+	font-size: 0.75rem;
+	line-height: 1.333333333333333;
+	margin-bottom: 1.333333333333333em;
+}
+h6 {
+	font-size: 0.6666666666666667rem;
+	line-height: 1.333333333333333;
+	margin-bottom: 1.333333333333333em;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 1.5em;
+}
+ul, ol {
+	list-style-type: none;
+	margin: 0 0 1.5em 3em;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+address, dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	border-left: 5px solid #c38596;
+	color: rgba(51, 71, 61, 0.5);
+	font-family: "Aleo","Skolar","ff-tisa-web-pro","Georgia",serif;
+	font-style: italic;
+	padding-left: 1.5em;
+}
+blockquote cite {
+	color: #33473d;
+	font-family: "Lato", "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-style: normal;
+	font-size: 0.75em;
+}
+
+blockquote cite:before {
+	content: "\2014 \0020";
+}
+address {
+	margin: 0 0 1.5em;
+}

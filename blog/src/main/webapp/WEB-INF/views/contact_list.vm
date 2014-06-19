@@ -1,6 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>海眼看天下 </title>
+	<link rel="stylesheet" type="text/css" href="../styles/style.css"/>
+	<style type="text/css">
+			.site-header {
+			background: rgba(51, 71, 61, 0.05) url(http://blog.guohai.me/wp-content/themes/bushwick/img/default-header.jpg) no-repeat scroll center;
+			background-size: cover;
+		}
+		</style>
+</head>
+<body class="home blog group-blog">
+
 #foreach($contact in $list)
 
 <a href="/blog/contact/blogid/${contact.code}">$contact.title</a>
 	
 	<br/>
+	<br/>
+	
+<article id="post-894" class="post-894 post type-post status-publish format-standard hentry category-1 entry-preview">
+	<header class="entry-header"><h1 class="entry-title"><a href="http://blog.guohai.me/2011/04/jian_kou_wall/" rel="bookmark">箭扣长城</a></h1></header><!-- .entry-header -->
+	<div class="entry-permalink">
+		<a class="more-link" href="http://blog.guohai.me/2011/04/jian_kou_wall/" title="箭扣长城" rel="bookmark">Read</a>
+	</div><!-- .entry-permalink -->
+
+	<footer class="entry-meta">
+		Posted <a href="http://blog.guohai.me/2011/04/jian_kou_wall/" title="20:09" rel="bookmark"><time class="entry-date" datetime="2011-04-04T20:09:29+00:00">3 years</time> ago</a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://blog.guohai.me/author/admin/" title="View all posts by 海阳" rel="author">海阳</a></span></span>.	</footer><!-- .entry-meta -->
+</article>
 #end
+
+</body>
+</html>
