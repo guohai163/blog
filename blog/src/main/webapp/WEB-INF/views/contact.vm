@@ -2,17 +2,79 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>${contact.title}</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/style.css"/>
 </head>
 <body>
-
+<div id="main">
+	<div id="content">
+		<div>
+			<article class="hentry " role="article">
+			  <header>
+    			<h1 class="entry-title">
 
 ${contact.title}
+</h1>
+      <p class="meta">
+        
+			Written <time datetime="$contact.title" pubdate data-updated="true">$contact.date</time>.
+        
+		<span class="categories">
+		  Tagged
+		  
+		    <a class='category' href='/tag/${contact.term}/'>${contact.term}</a>.
+		  
+		</span>
 
-<br/>
 
-${contact.intro}
+      </p>
+    
+  </header>
+			<div class="entry-content">
+			${contact.intro}
+			</div>
+			</article>
+			
+			
+		</div>
+		<aside class="sidebar">
+&nbsp; 
+&nbsp;  &nbsp;<header class="site-header">
+  <div class="pug">
+    <a href="/">
+      <img src="http://guohai.org/images/beaver.png" alt="">
+    </a>
+  </div>
+  <h1 class="site-title"><a href="/">海眼看世界</a></h1>
+  <p class="site-intro">
+    A blog by <a href="/about/">Guohai</a>.
+  </p>
+
+  <p class="site-intro">
+    Follow <a href="http://twitter.com/freeguo">@freeguo</a> on Twitter.
+  </p>
+
+ 
+  
+</header>
+
+
+
+&nbsp; 
+</aside>
+	
+	</div>
+</div>
+
+
+<footer class="blog-footer" role="contentinfo"><p>
+  © 2014 Guohai.
+
+
+</p>
+
+</footer>
 
 </body>
 </html>

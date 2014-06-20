@@ -18,19 +18,18 @@
 
 #foreach($contact in $list)
 
-<a href="/blog/contact/blogid/${contact.code}">$contact.title</a>
+<a href="/blog/contact/blogid/${contact.code}"></a>
 	
 	<br/>
 	<br/>
 	
 <article id="post-894" class="post-894 post type-post status-publish format-standard hentry category-1 entry-preview">
-	<header class="entry-header"><h1 class="entry-title"><a href="http://blog.guohai.me/2011/04/jian_kou_wall/" rel="bookmark">箭扣长城</a></h1></header><!-- .entry-header -->
-	<div class="entry-permalink">
-		<a class="more-link" href="http://blog.guohai.me/2011/04/jian_kou_wall/" title="箭扣长城" rel="bookmark">Read</a>
-	</div><!-- .entry-permalink -->
+	<header class="entry-header">
+	<h1 class="entry-title">
+	<a href="/blog/contact/blogid/${contact.code}" rel="bookmark">$contact.title</a>
+	</h1></header>
 
-	<footer class="entry-meta">
-		Posted <a href="http://blog.guohai.me/2011/04/jian_kou_wall/" title="20:09" rel="bookmark"><time class="entry-date" datetime="2011-04-04T20:09:29+00:00">3 years</time> ago</a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://blog.guohai.me/author/admin/" title="View all posts by 海阳" rel="author">海阳</a></span></span>.	</footer><!-- .entry-meta -->
+
 </article>
 #end
 

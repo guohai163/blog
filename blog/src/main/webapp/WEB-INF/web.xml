@@ -58,5 +58,9 @@
 		<param-value>utf-8</param-value>
 		</init-param>
 	</filter>
+	<welcome-file-list>
+		<welcome-file>contact_list.vm</welcome-file>
+	</welcome-file-list>
+	
 
 </web-app>

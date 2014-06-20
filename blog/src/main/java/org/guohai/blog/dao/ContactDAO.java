@@ -31,7 +31,9 @@ public class ContactDAO {
         }
     }
     
-
+    /*
+     * 按ID获取内容
+     */
     public Contact selectById(int id){
     	SqlSession session = sqlSessionFactory.openSession();
 
@@ -42,4 +44,18 @@ public class ContactDAO {
 			session.close();
 		}
     }
+    
+    public List<Contact> selectByPage(PagenateArgs pageinfo){
+    	
+    	SqlSession session = sqlSessionFactory.openSession();
+    	
+    	try{
+    		List<Contact> list=session.selectList("Contact.getByPage",pageinfo);
+    		return list;
+    	}finally{
+    		session.close();
+    	}
+    }
+    
+    
 }

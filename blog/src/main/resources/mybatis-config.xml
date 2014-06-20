@@ -3,6 +3,7 @@
 <configuration>  
 	<typeAliases>
 		<typeAlias alias="Contact" type="org.guohai.blog.model.Contact"/>
+		<typeAlias alias="PagenateArgs" type="org.guohai.blog.model.PagenateArgs"/>
 	</typeAliases>
     <environments default="environment">  
         <environment id="environment">  

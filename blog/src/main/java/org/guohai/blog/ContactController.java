@@ -2,6 +2,7 @@ package org.guohai.blog;
 
 import java.util.List;
 
+import org.guohai.blog.bll.ContactBLL;
 import org.guohai.blog.dao.ContactDAO;
 import org.guohai.blog.model.Contact;
 import org.slf4j.Logger;
@@ -22,6 +23,7 @@ public class ContactController {
 	
 
 	private static ContactDAO contactDAO;
+	private ContactBLL contactBLL;
 	
 	@RequestMapping(value="/blogid/{blogid}")
 	public String GetContactFromCode(@PathVariable("blogid") int blogid, Model model){
@@ -40,6 +42,14 @@ public class ContactController {
 	public String GetContact(Model model){
 		contactDAO= new ContactDAO();
 		List<Contact> list = contactDAO.selectAll();
+		model.addAttribute("list", list);
+		return "contact_list";
+	}
+	
+	@RequestMapping(value="/{page}")
+	public String GetContact(@PathVariable("page") int page,Model model){
+		contactBLL = new ContactBLL();
+		List<Contact> list = contactBLL.GetContactByPage(page);
 		model.addAttribute("list", list);
 		return "contact_list";
 	}
