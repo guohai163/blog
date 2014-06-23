@@ -36,9 +36,7 @@
 					<footer>
 					  
 					  
-					  
-					  <span class="categories">Tagged <a class="category" href="/blog/${contact.term}/">${contact.term}</a>.</span>
-					  
+
 					</footer>
 					
 					</article>

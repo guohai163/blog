@@ -35,6 +35,11 @@ public class ContactController {
 		Contact contact = contactDAO.selectById(blogid);
 		logger.info("blogid title :"+contact.getIntro());
 		model.addAttribute("contact", contact);
+		Contact contactLast = contactDAO.selectByLast(blogid);
+		model.addAttribute("contactLast", contactLast);
+		Contact contactNext = contactDAO.selectByNext(blogid);
+		model.addAttribute("contactNext", contactNext);
+		
 		return "contact";
 	}
 	

@@ -31,9 +31,11 @@ public class ContactDAO {
         }
     }
     
-    /*
-     * 按ID获取内容
-     */
+	/**
+	 * 按ID获取内容
+	 * @param id
+	 * @return
+	 */
     public Contact selectById(int id){
     	SqlSession session = sqlSessionFactory.openSession();
 
@@ -44,7 +46,11 @@ public class ContactDAO {
 			session.close();
 		}
     }
-    
+    /**
+     * 按页面返回内容
+     * @param pageinfo
+     * @return
+     */
     public List<Contact> selectByPage(PagenateArgs pageinfo){
     	
     	SqlSession session = sqlSessionFactory.openSession();
@@ -57,5 +63,33 @@ public class ContactDAO {
     	}
     }
     
+    /**
+     * 返回下一条
+     * @param code
+     * @return
+     */
+    public Contact selectByNext(int code){
+    	SqlSession session = sqlSessionFactory.openSession();
+    	
+    	try{
+    		return session.selectOne("Contact.getNextBlog", code);
+    	}finally{
+    		session.close();
+    	}
+    }
     
+    /**
+     * 返回上一条
+     * @param code
+     * @return
+     */
+    public Contact selectByLast(int code){
+    	SqlSession session = sqlSessionFactory.openSession();
+    	
+    	try{
+    		return session.selectOne("Contact.getLastBlog", code);
+    	}finally{
+    		session.close();
+    	}
+    }
 }

@@ -5,31 +5,39 @@
     
     <mapper namespace="Contact">
     	<resultMap type="Contact" id="result">
-    		<result property="code" column="ID"/>
+    		<result property="code" column="code"/>
     		<result property="title" column="post_title"/>
     		<result property="intro" column="post_content"/>
     		<result property="year" column="date_year"/>
     		<result property="month" column="date_month"/>
     		<result property="day" column="date_day"/>
     		<result property="date" column="post_date"/>
-    		<result property="term" column="term_name"/>
     		
     	</resultMap>
     
     	<select id="getAll" resultMap="result">
-    		SELECT ID,post_date,post_content,post_title,name as term_name
+    		SELECT code,post_date,post_content,post_title
     			,date_format(post_date,'%Y') as date_year
     			,date_format(post_date,'%b') as date_month
 				,date_format(post_date,'%e') as date_day
-    		 FROM wp_posts a
-    		 join wp_terms b on a.post_category=b.term_id
-    		  WHERE post_type='post' order by post_date desc 
+    		 FROM gh_posts 
+    		  WHERE post_status='publish' order by post_date desc 
     		 limit 0,88
     	</select>
     	<select id="getById" parameterType="int" resultMap="result">
-    		SELECT * FROM  wp_posts WHERE ID=#{id}
+    		SELECT * FROM  gh_posts WHERE code=#{id}
     	</select>
     	<select id="getByPage" parameterType="PagenateArgs" resultMap="result">
-    		SELECT * FROM wp_posts WHERE post_type='post' order by ID desc limit #{pageStart},#{pageSize} 
+    		SELECT * FROM gh_posts order by ID desc limit #{pageStart},#{pageSize} 
+    	</select>
+    	
+    	<select id="getNextBlog" parameterType="int" resultMap="result">
+    		SELECT code,post_title FROM gh_posts WHERE code > #{code} ORDER BY code limit 0,1
+    	</select>
+    	
+    	<select id="getLastBlog" parameterType="int" resultMap="result">
+    		<![CDATA[
+    		SELECT code,post_title FROM gh_posts WHERE code < #{code} ORDER BY code desc LIMIT 0,1
+    		]]>
     	</select>
     </mapper>
