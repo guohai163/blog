@@ -7,6 +7,7 @@ import java.util.Locale;
 
 import org.guohai.blog.dao.ContactDAO;
 import org.guohai.blog.model.Contact;
+import org.guohai.util.HttpXmlClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -30,7 +31,8 @@ public class HomeController {
 	@SuppressWarnings("deprecation")
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		logger.info("guid is : {}.", HttpXmlClient.GetUUID());
 		/*
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
