@@ -36,10 +36,14 @@ ${contact.title}
 			</article>
 			<ul style="list-style:none;text-align:center;margin:20px;">
 				<li style="display:inline;">
+				#if(${contactLast.code})
 					<a href="./${contactLast.code}" style="float:left;">← ${contactLast.title}</a>
+					#end
 				</li>
 				<li style="display:inline;">
-					<a href="contactNext" style="float:right;">${contactNext.title} →</a>
+				#if(${contactNext.code})
+					<a href="./${contactNext.code}" style="float:right;">${contactNext.title} →</a>
+				#end
 				</li>
 			</ul>
 			<!-- commin -->
