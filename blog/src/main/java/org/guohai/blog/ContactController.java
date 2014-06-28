@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.petebevin.markdown.MarkdownProcessor;
+
 @Controller
 @RequestMapping(value="contact")
 public class ContactController {
@@ -34,6 +36,7 @@ public class ContactController {
 		
 		Contact contact = contactDAO.selectById(blogid);
 		logger.info("blogid title :"+contact.getIntro());
+		contact.setIntro(new MarkdownProcessor().markdown(contact.getIntro()));
 		model.addAttribute("contact", contact);
 		Contact contactLast = contactDAO.selectByLast(blogid);
 		model.addAttribute("contactLast", contactLast);

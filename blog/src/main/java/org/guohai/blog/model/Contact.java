@@ -33,6 +33,10 @@ public class Contact {
 	public String getIntro(){
 		return intro;
 	}
+	
+	public void setIntro(String intro){
+		this.intro = intro;
+	}
 	public int getYear(){
 		return year;
 	}
