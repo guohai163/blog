@@ -1,7 +1,6 @@
 package org.guohai.util;
 
 import org.apache.wink.client.*;
-import org.guohai.blog.HomeController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

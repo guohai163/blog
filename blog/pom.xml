@@ -153,6 +153,11 @@
   <artifactId>markdownj</artifactId>
   <version>0.3.0-1.0.2b4</version>
 </dependency>
+        <dependency>
+        	<groupId>com.evernote</groupId>
+        	<artifactId>evernote-api</artifactId>
+        	<version>1.25.1</version>
+        </dependency>
 	</dependencies>
     <build>
         <plugins>
