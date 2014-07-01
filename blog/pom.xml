@@ -149,10 +149,10 @@
         	<version>1.4</version>
         </dependency>
         <dependency>
-  <groupId>org.markdownj</groupId>
-  <artifactId>markdownj</artifactId>
-  <version>0.3.0-1.0.2b4</version>
-</dependency>
+		  <groupId>org.markdownj</groupId>
+		  <artifactId>markdownj-core</artifactId>
+		  <version>0.4</version>
+		</dependency>
         <dependency>
         	<groupId>com.evernote</groupId>
         	<artifactId>evernote-api</artifactId>
