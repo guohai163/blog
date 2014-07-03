@@ -16,4 +16,12 @@ public class ContactBLL {
 		PagenateArgs page =new PagenateArgs(pageIndex,10);
 		return contactDAO.selectByPage(page);
 	}
+	
+	public Contact GetContactBySmallTitle(int year,int month,int day,String smallTitle){
+		contactDAO= new ContactDAO();
+		Contact contact = new Contact();
+		contact.setSDate(year+"-"+month+"-"+day);
+		contact.setSmallTitle(smallTitle);
+		return contactDAO.selectByYMDandSmallTitle(contact);
+	}
 }

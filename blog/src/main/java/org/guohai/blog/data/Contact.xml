@@ -12,6 +12,8 @@
     		<result property="month" column="date_month"/>
     		<result property="day" column="date_day"/>
     		<result property="date" column="post_date"/>
+    		<result property="smallTitle" column="post_small_name"/>
+    		<result property="iMonth" column="date_imonth"/>
     		
     	</resultMap>
     
@@ -20,9 +22,17 @@
     			,date_format(post_date,'%Y') as date_year
     			,date_format(post_date,'%b') as date_month
 				,date_format(post_date,'%e') as date_day
+				,date_format(post_date,'%c') as date_imonth
+				,post_small_name
     		 FROM gh_posts 
     		  WHERE post_status='publish' order by post_date desc 
     		 limit 0,88
+    	</select>
+    	<select id="getByYMDandSmallTitle" parameterType="Contact" resultMap="result">
+    		SELECT *,date_format(post_date,'%Y-%c-%e') 
+				FROM blog.gh_posts 
+				WHERE post_small_name = #{smallTitle} 
+				AND date_format(post_date,'%Y-%c-%e') = #{sDate}
     	</select>
     	<select id="getById" parameterType="int" resultMap="result">
     		SELECT * FROM  gh_posts WHERE code=#{id}

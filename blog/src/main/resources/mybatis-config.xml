@@ -11,8 +11,8 @@
             <dataSource type="POOLED">  
                 <property name="driver" value="com.mysql.jdbc.Driver" />  
                 <property name="url"  
-                    value="jdbc:mysql://192.168.11.213:3306/blog?characterEncoding =UTF-8" />  
-                <property name="username" value="ghblog" />  
+                    value="jdbc:mysql://192.168.6.192:3306/blog?characterEncoding =UTF-8" />  
+                <property name="username" value="root" />  
                 <property name="password" value="coolnet" />  
             </dataSource>  
         </environment>  

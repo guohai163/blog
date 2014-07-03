@@ -32,7 +32,7 @@ public class ContactDAO {
     }
     
 	/**
-	 * 按ID获取内容
+	 * 
 	 * @param id
 	 * @return
 	 */
@@ -47,7 +47,7 @@ public class ContactDAO {
 		}
     }
     /**
-     * 按页面返回内容
+     * 
      * @param pageinfo
      * @return
      */
@@ -64,7 +64,7 @@ public class ContactDAO {
     }
     
     /**
-     * 返回下一条
+     * 
      * @param code
      * @return
      */
@@ -79,7 +79,7 @@ public class ContactDAO {
     }
     
     /**
-     * 返回上一条
+     * 
      * @param code
      * @return
      */
@@ -88,6 +88,16 @@ public class ContactDAO {
     	
     	try{
     		return session.selectOne("Contact.getLastBlog", code);
+    	}finally{
+    		session.close();
+    	}
+    }
+    
+    public Contact selectByYMDandSmallTitle(Contact parm){
+    	SqlSession session = sqlSessionFactory.openSession();
+    	
+    	try{
+    		return session.selectOne("Contact.getByYMDandSmallTitle", parm);
     	}finally{
     		session.close();
     	}

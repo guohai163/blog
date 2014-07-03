@@ -27,8 +27,7 @@
 					<article>
   
 					<h1 class="entry-title">
-					
-					<a href="/blog/contact/blogid/${contact.code}">$contact.title</a>
+					<a href="./${contact.year}/${contact.iMonth}/${contact.day}/${contact.smallTitle}/">$contact.title</a>
 					
 					</h1>
 					
