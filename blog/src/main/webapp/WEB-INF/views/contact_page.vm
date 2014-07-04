@@ -41,6 +41,18 @@
 					</article>
 				#end
 				</div>
+				<ul style="list-style:none;text-align:center;margin-top:30px;">
+				<li style="display:inline;">
+				
+					<a href="./page/$page＋1/" style="float:left;">← 较旧的日志</a>
+			
+				</li>
+				<li style="display:inline;">
+				
+					<a href="./page/2/" style="float:right;">较新的日志 →</a>
+			
+				</li>
+                </ul>
 			</article>
 		</div>
 		

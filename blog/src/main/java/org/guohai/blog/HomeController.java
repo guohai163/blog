@@ -67,6 +67,7 @@ public class HomeController {
 
 		List<Contact> list = new ContactBLL().GetContactByPage(page);
 		model.addAttribute("list", list);
+		model.addAttribute("page",page);
 		return "contact_page";
 	}
 }
