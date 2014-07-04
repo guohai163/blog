@@ -26,7 +26,7 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
 
-	private static ContactDAO contactDAO;
+	private static ContactDAO contactDAO = new ContactDAO();
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -36,8 +36,8 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 
 		Date date = new Date();
-		contactDAO = new ContactDAO();
-		List<Contact> list = contactDAO.selectAll();
+		//contactDAO = new ContactDAO();
+		List<Contact> list = contactDAO.selectHomeList();
 		model.addAttribute("list", list);
 		model.addAttribute("curYear", date.getYear() + 1);
 		return "home";
@@ -48,15 +48,25 @@ public class HomeController {
 	public String contact(@PathVariable("year") int year,@PathVariable("month") int month,
 			@PathVariable("day") int day,@PathVariable("smallTitle") String smallTitle, Model model) {
 		logger.info("contact intpu url :"+year+"/"+month+"/"+day+"/"+smallTitle);
-	
+		
 		Contact contact = new ContactBLL().GetContactBySmallTitle(year, month, day, smallTitle);
-		logger.info("blogid title :"+contact.getIntro());
+		
 		contact.setIntro(new MarkdownProcessor().markdown(contact.getIntro()));
 		model.addAttribute("contact", contact);
+		logger.info("blogid :"+contact.getCode());
 		Contact contactLast = contactDAO.selectByLast(contact.getCode());
+		//logger.info(contactLast.getSmallTitle());
 		model.addAttribute("contactLast", contactLast);
 		Contact contactNext = contactDAO.selectByNext(contact.getCode());
 		model.addAttribute("contactNext", contactNext);
 		return "contact";
+	}
+	
+	@RequestMapping(value="/page/{page}/")
+	public String contactBYPage(@PathVariable("page") int page,Model model){
+
+		List<Contact> list = new ContactBLL().GetContactByPage(page);
+		model.addAttribute("list", list);
+		return "contact_page";
 	}
 }

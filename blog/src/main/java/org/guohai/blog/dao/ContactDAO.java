@@ -19,12 +19,12 @@ public class ContactDAO {
      * Returns the list of all Contact instances from the database.
      * @return the list of all Contact instances from the database.
      */
-    public List<Contact> selectAll(){
+    public List<Contact> selectHomeList(){
  
         SqlSession session = sqlSessionFactory.openSession();
  
         try {
-            List<Contact> list = session.selectList("Contact.getAll");
+            List<Contact> list = session.selectList("Contact.getHomeList");
             return list;
         } finally {
             session.close();

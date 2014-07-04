@@ -17,7 +17,7 @@
     		
     	</resultMap>
     
-    	<select id="getAll" resultMap="result">
+    	<select id="getHomeList" resultMap="result">
     		SELECT code,post_date,post_content,post_title
     			,date_format(post_date,'%Y') as date_year
     			,date_format(post_date,'%b') as date_month
@@ -26,7 +26,7 @@
 				,post_small_name
     		 FROM gh_posts 
     		  WHERE post_status='publish' order by post_date desc 
-    		 limit 0,88
+    		 limit 0,10
     	</select>
     	<select id="getByYMDandSmallTitle" parameterType="Contact" resultMap="result">
     		SELECT *,date_format(post_date,'%Y-%c-%e') 
@@ -37,17 +37,36 @@
     	<select id="getById" parameterType="int" resultMap="result">
     		SELECT * FROM  gh_posts WHERE code=#{id}
     	</select>
+    	
     	<select id="getByPage" parameterType="PagenateArgs" resultMap="result">
-    		SELECT * FROM gh_posts order by ID desc limit #{pageStart},#{pageSize} 
+    		SELECT code,post_date,post_content,post_title
+    			,date_format(post_date,'%Y') as date_year
+    			,date_format(post_date,'%b') as date_month
+				,date_format(post_date,'%e') as date_day
+				,date_format(post_date,'%c') as date_imonth
+				,post_small_name FROM gh_posts order by  post_date desc , code desc limit #{pageStart},#{pageSize} 
     	</select>
     	
     	<select id="getNextBlog" parameterType="int" resultMap="result">
-    		SELECT code,post_title FROM gh_posts WHERE code > #{code} ORDER BY code limit 0,1
+    	<![CDATA[
+    		SELECT code,post_date,post_content,post_title
+    			,date_format(post_date,'%Y') as date_year
+    			,date_format(post_date,'%b') as date_month
+				,date_format(post_date,'%e') as date_day
+				,date_format(post_date,'%c') as date_imonth
+				,post_small_name FROM gh_posts WHERE code > #{code} ORDER BY code limit 0,1
+				]]>
     	</select>
     	
     	<select id="getLastBlog" parameterType="int" resultMap="result">
-    		<![CDATA[
-    		SELECT code,post_title FROM gh_posts WHERE code < #{code} ORDER BY code desc LIMIT 0,1
-    		]]>
+    	<![CDATA[
+    		SELECT  code,post_date,post_content,post_title
+    			,date_format(post_date,'%Y') as date_year
+    			,date_format(post_date,'%b') as date_month
+				,date_format(post_date,'%e') as date_day
+				,date_format(post_date,'%c') as date_imonth
+				,post_small_name
+				 FROM gh_posts WHERE code < #{code} ORDER BY code desc LIMIT 0,1
+				 ]]>
     	</select>
     </mapper>

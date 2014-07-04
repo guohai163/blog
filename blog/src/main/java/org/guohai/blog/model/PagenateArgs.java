@@ -11,7 +11,7 @@ public class PagenateArgs {
 	public PagenateArgs(int pageIndex, int pageSize) {
         this.pageIndex = pageIndex;
         this.pageSize = pageSize;
-        pageStart = pageIndex * pageSize;
+        pageStart = (pageIndex -1) * pageSize;
     }
 	
 	public int getPageIndex() {
