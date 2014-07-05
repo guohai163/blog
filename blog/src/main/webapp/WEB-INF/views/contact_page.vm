@@ -43,14 +43,19 @@
 				</div>
 				<ul style="list-style:none;text-align:center;margin-top:30px;">
 				<li style="display:inline;">
-				
-					<a href="./page/$page＋1/" style="float:left;">← 较旧的日志</a>
-			
+
+					#if($maxPage != $page)
+						#set($lastPage = $page + 1 )
+						<a href="../../page/$lastPage/" style="float:left;">← 较旧的日志</a>
+					#end
 				</li>
 				<li style="display:inline;">
-				
-					<a href="./page/2/" style="float:right;">较新的日志 →</a>
-			
+					#if($page == 2)
+						<a href="../../" style="float:right;">较新的日志 →</a>
+					#else
+						#set($nextPage = $page - 1 )
+						<a href="../../page/${nextPage}/" style="float:right;">较新的日志 →</a>
+					#end
 				</li>
                 </ul>
 			</article>

@@ -16,7 +16,14 @@ public class ContactBLL {
 		PagenateArgs page =new PagenateArgs(pageIndex,10);
 		return contactDAO.selectByPage(page);
 	}
-	
+	/**
+	 * 通过时间和短标题获取文章详细内容
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @param smallTitle
+	 * @return
+	 */
 	public Contact GetContactBySmallTitle(int year,int month,int day,String smallTitle){
 		contactDAO= new ContactDAO();
 		Contact contact = new Contact();
@@ -24,4 +31,14 @@ public class ContactBLL {
 		contact.setSmallTitle(smallTitle);
 		return contactDAO.selectByYMDandSmallTitle(contact);
 	}
+	
+	/**
+	 * 获取公有博客数量
+	 * @return
+	 */
+	public int GetPublishPostPageCount(){
+		contactDAO = new ContactDAO();
+		return contactDAO.selectPostCount()/10+1;
+	}
+	
 }

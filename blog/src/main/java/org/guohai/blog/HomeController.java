@@ -7,7 +7,7 @@ import java.util.Locale;
 import org.guohai.blog.bll.ContactBLL;
 import org.guohai.blog.dao.ContactDAO;
 import org.guohai.blog.model.Contact;
-import org.guohai.util.HttpXmlClient;
+
 import org.markdownj.MarkdownProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,10 +64,11 @@ public class HomeController {
 	
 	@RequestMapping(value="/page/{page}/")
 	public String contactBYPage(@PathVariable("page") int page,Model model){
-
-		List<Contact> list = new ContactBLL().GetContactByPage(page);
+		ContactBLL contactBll = new ContactBLL();
+		List<Contact> list = contactBll.GetContactByPage(page);
 		model.addAttribute("list", list);
 		model.addAttribute("page",page);
+		model.addAttribute("maxPage", contactBll.GetPublishPostPageCount());
 		return "contact_page";
 	}
 }

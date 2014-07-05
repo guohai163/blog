@@ -93,11 +93,26 @@ public class ContactDAO {
     	}
     }
     
+    /**
+     * 
+     * @param parm
+     * @return
+     */
     public Contact selectByYMDandSmallTitle(Contact parm){
     	SqlSession session = sqlSessionFactory.openSession();
     	
     	try{
     		return session.selectOne("Contact.getByYMDandSmallTitle", parm);
+    	}finally{
+    		session.close();
+    	}
+    }
+    
+    public int selectPostCount(){
+    	SqlSession session = sqlSessionFactory.openSession();
+    	
+    	try{
+    		return session.selectOne("Contact.getPostCount");
     	}finally{
     		session.close();
     	}
