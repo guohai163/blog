@@ -16,15 +16,17 @@ public class Contact {
 	private String term;
 	private String smallTitle;
 	
-	public Contact(int code,String title,String intro){
+	public Contact(String title,String intro){
 		super();
-		this.code=code;
 		this.title=title;
 		this.intro=intro;
 	}
 
 	public Contact(){}
 	
+	public void setDate(Date date){
+		this.date = date;
+	}
 	public int getIMonth(){
 		return iMonth;
 	}

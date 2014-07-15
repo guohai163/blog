@@ -1,5 +1,6 @@
 package org.guohai.blog.bll;
 
+import java.util.Date;
 import java.util.List;
 
 import org.guohai.blog.dao.ContactDAO;
@@ -39,6 +40,14 @@ public class ContactBLL {
 	public int GetPublishPostPageCount(){
 		contactDAO = new ContactDAO();
 		return contactDAO.selectPostCount()/10+1;
+	}
+	
+	public void AddPost(){
+		Contact contact = new Contact("long long is titile","cccccc ccc\nddd\n");
+		contact.setSmallTitle("smatlltitle");
+		contact.setDate(new Date());
+		contactDAO=new ContactDAO();
+		contactDAO.insertPost(contact);
 	}
 	
 }

@@ -108,11 +108,25 @@ public class ContactDAO {
     	}
     }
     
+    /**
+     * 
+     * @return
+     */
     public int selectPostCount(){
     	SqlSession session = sqlSessionFactory.openSession();
     	
     	try{
     		return session.selectOne("Contact.getPostCount");
+    	}finally{
+    		session.close();
+    	}
+    }
+    
+    public void insertPost(Contact contact){
+    	SqlSession session = sqlSessionFactory.openSession();
+    	
+    	try{
+    		 session.selectOne("Contact.addPost", contact);
     	}finally{
     		session.close();
     	}

@@ -1,1 +1,39 @@
-aa
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>海眼看天下 </title>
+	<link rel="stylesheet" type="text/css" href="../../styles/style.css"/>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body class="home blog group-blog">
+
+	<form action="" method="post" id="blogpost">
+		标题：<input type="text" id="txtTitle" name="title"/>
+		
+		<br/>
+		短标题：<input type="text" id="txtSmallTitle" name="smallTitle"/>
+		<br/>
+		<input type="button" value="submit" name="butsubmit" id="butsubmit"/>
+    </form>
+	
+	
+	<script >
+		$(function(){
+			$("#butsubmit").click(function(){
+
+				var data = $("#blogpost").serializeArray(); 
+
+				$.post("", data, RateArticleSuccess, "json");
+			});
+		})
+		
+		function RateArticleSuccess(result){
+			alert(result);
+		}
+    </script>
+</body>
+</html>

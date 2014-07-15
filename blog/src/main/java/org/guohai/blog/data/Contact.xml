@@ -75,4 +75,10 @@
 				 AND   post_status='publish'  ORDER BY code desc LIMIT 0,1
 				 ]]>
     	</select>
+    	<select id="addPost" parameterType="Contact">
+    		<![CDATA[
+    			INSERT INTO gh_posts (`post_date`,`post_title`,`post_content`,`post_status`,`post_small_name`)
+    			VALUES(#{date},#{title},#{intro},'publish',#{smallTitle})
+    		]]>
+    	</select>
     </mapper>

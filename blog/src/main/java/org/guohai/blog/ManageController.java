@@ -2,6 +2,7 @@ package org.guohai.blog;
 
 import java.util.Locale;
 
+import org.guohai.blog.bll.ContactBLL;
 import org.guohai.blog.model.Contact;
 import org.json.JSONArray;
 import org.slf4j.Logger;
@@ -23,9 +24,14 @@ public class ManageController {
 	@RequestMapping(value = "/add-contact/", method = RequestMethod.POST)
 	public String AddContact(@RequestBody String requestBody) {
 		logger.info(requestBody);
-		Contact contact = new Contact();
-		
-		
+		//Contact contact = new Contact();
+		//ContactBLL  contactBll = new ContactBLL();
+		//contactBll.AddPost();
+		return "manage/add-contact";
+	}
+	
+	@RequestMapping(value="/add-contact/",method = RequestMethod.GET)
+	public String AddContact(){
 		return "manage/add-contact";
 	}
 }
