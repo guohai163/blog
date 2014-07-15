@@ -12,22 +12,44 @@
 <body class="home blog group-blog">
 
 	<form action="" method="post" id="blogpost">
-		标题：<input type="text" id="txtTitle" name="title"/>
+		标题：<input type="text" id="title" name="title"/>
 		
 		<br/>
-		短标题：<input type="text" id="txtSmallTitle" name="smallTitle"/>
+		短标题：<input type="text" id="smallTitle" name="smallTitle"/>
 		<br/>
 		<input type="button" value="submit" name="butsubmit" id="butsubmit"/>
     </form>
 	
 	
 	<script >
+	$.postJSON = function(url, data, callback) { 
+    return jQuery.ajax({ 
+        'type': 'POST', 
+        'url': url, 
+        'contentType': 'application/json', 
+        'data': JSON.stringify(data), 
+        'dataType': 'json', 
+        'success': callback 
+    }); 
+};
 		$(function(){
 			$("#butsubmit").click(function(){
-
-				var data = $("#blogpost").serializeArray(); 
-
-				$.post("./add-contact/", data, RateArticleSuccess, "json");
+				$.postJSON('/blog/manage/add-contact',$("#blogpost").serialize())
+				/*
+				$.ajax({
+					url:'/blog/manage/add-contact',
+					type:'POST',
+					data:$("#blogpost").serialize(),
+					contentType:'application/json',
+					success: function (data) {
+                            alert('Client created!! :-)')
+                        },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                            alert('An error has occured!! :-(')
+                        }
+					
+				});
+				*/
 			});
 		})
 		
