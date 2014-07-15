@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<title>海眼看天下 </title>
-	<link rel="stylesheet" type="text/css" href="../../styles/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../styles/style.css"/>
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 <body class="home blog group-blog">
@@ -27,7 +27,7 @@
 
 				var data = $("#blogpost").serializeArray(); 
 
-				$.post("", data, RateArticleSuccess, "json");
+				$.post("./add-contact/", data, RateArticleSuccess, "json");
 			});
 		})
 		

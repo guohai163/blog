@@ -16,21 +16,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
+@RequestMapping("/manage")
 public class ManageController {
 	
 	private static final Logger logger = LoggerFactory
 			.getLogger(HomeController.class);
 	
-	@RequestMapping(value = "/add-contact/", method = RequestMethod.POST)
-	public String AddContact(@RequestBody String requestBody) {
-		logger.info(requestBody);
+	@RequestMapping(value = "/add-contact", method = RequestMethod.GET)
+	public String AddContact(@RequestBody Contact contact) {
+		logger.info(contact.getTitle());
 		//Contact contact = new Contact();
 		//ContactBLL  contactBll = new ContactBLL();
 		//contactBll.AddPost();
 		return "manage/add-contact";
 	}
 	
-	@RequestMapping(value="/add-contact/",method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public String AddContact(){
 		return "manage/add-contact";
 	}
