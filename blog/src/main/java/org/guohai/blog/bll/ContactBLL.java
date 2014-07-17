@@ -42,9 +42,11 @@ public class ContactBLL {
 		return contactDAO.selectPostCount()/10+1;
 	}
 	
-	public void AddPost(){
-		Contact contact = new Contact("long long is titile","cccccc ccc\nddd\n");
-		contact.setSmallTitle("smatlltitle");
+	/**
+	 * 
+	 * @param contact
+	 */
+	public void AddPost(Contact contact){
 		contact.setDate(new Date());
 		contactDAO=new ContactDAO();
 		contactDAO.insertPost(contact);

@@ -7,9 +7,10 @@
 	<meta name="viewport" content="width=device-width" />
 	<title>海眼看天下 </title>
 	<link rel="stylesheet" type="text/css" href="../styles/style.css"/>
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="../script/until.js"></script>
 </head>
-<body class="home blog group-blog">
+<body>
 
 	<form action="" method="post" id="blogpost">
 		标题：<input type="text" id="title" name="title"/>
@@ -17,45 +18,30 @@
 		<br/>
 		短标题：<input type="text" id="smallTitle" name="smallTitle"/>
 		<br/>
+		内容：<br/>
+		<textarea rows="20" clos="300" id="intro">
+			
+        </textarea>
+		<br/>
 		<input type="button" value="submit" name="butsubmit" id="butsubmit"/>
     </form>
 	
-	
+	         
 	<script >
-	$.postJSON = function(url, data, callback) { 
-    return jQuery.ajax({ 
-        'type': 'POST', 
-        'url': url, 
-        'contentType': 'application/json', 
-        'data': JSON.stringify(data), 
-        'dataType': 'json', 
-        'success': callback 
-    }); 
-};
+
+	
+	
 		$(function(){
-			$("#butsubmit").click(function(){
-				$.postJSON('/blog/manage/add-contact',$("#blogpost").serialize())
-				/*
-				$.ajax({
-					url:'/blog/manage/add-contact',
-					type:'POST',
-					data:$("#blogpost").serialize(),
-					contentType:'application/json',
-					success: function (data) {
-                            alert('Client created!! :-)')
-                        },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                            alert('An error has occured!! :-(')
-                        }
-					
-				});
-				*/
+			$('#butsubmit').click(function(){
+				var title = $("#title").val();
+				var smallTitle = $("#smallTitle").val();
+				var intro = $("#intro").val();
+
+				$.postJSON("/blog/manage/add",{title:title,smallTitle:smallTitle,intro:intro});
+
 			});
 		})
 		
-		function RateArticleSuccess(result){
-			alert(result);
-		}
     </script>
 </body>
 </html>
