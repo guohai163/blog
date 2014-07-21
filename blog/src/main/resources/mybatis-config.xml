@@ -4,6 +4,7 @@
 	<typeAliases>
 		<typeAlias alias="Contact" type="org.guohai.blog.model.Contact"/>
 		<typeAlias alias="PagenateArgs" type="org.guohai.blog.model.PagenateArgs"/>
+		<typeAlias alias="User" type="org.guohai.blog.model.User"/>
 	</typeAliases>
     <environments default="environment">  
         <environment id="environment">  
@@ -18,5 +19,6 @@
     </environments>  
     <mappers>
   	   <mapper resource="org/guohai/blog/data/Contact.xml"/>
+  	   <mapper resource="org/guohai/blog/data/User.xml"/>
     </mappers>
 </configuration>  

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="User">
+    	<resultMap type="User" id="result">
+    		<result property="code" column="code"/>
+    		<result property="userName" column="user_name"/>
+    		<result property="password" column="pass_word"/>
+    		<result property="passKey" column="pass_key"/>
+    	</resultMap>
+    	<select id="getByUserName" parameterType="String" resultMap="result">
+			SELECT `code`,`user_name`,`pass_word`,`pass_key`
+			FROM `gh_user` WHERE user_name=#{userName};
+    	</select>
+    </mapper>

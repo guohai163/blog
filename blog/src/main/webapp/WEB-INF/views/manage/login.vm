@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>海眼看天下 </title>
+	<link rel="stylesheet" type="text/css" href="../styles/style.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="../script/until.js"></script>
+</head>
+<body>
+	<form method="POST" action="./login">
+        用户名：<input type="text" name="username"></input>
+		<br/>
+        密码:<input type="text" name="password"></input>
+		
+		<br/>
+		<input type="submit" value="loging"/>
+    </form>
+	
+	
+</body>
+</html>
