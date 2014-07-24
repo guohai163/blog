@@ -37,10 +37,10 @@ public class HomeController {
 
 		Date date = new Date();
 		//contactDAO = new ContactDAO();
-		List<Contact> list = contactDAO.selectHomeList();
-		model.addAttribute("list", list);
+		//List<Contact> list = contactDAO.selectHomeList();
+		//model.addAttribute("list", list);
 		model.addAttribute("curYear", date.getYear() + 1);
-		return "home";
+		return "index";
 	}
 	
 	

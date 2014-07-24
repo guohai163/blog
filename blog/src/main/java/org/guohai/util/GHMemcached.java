@@ -26,7 +26,7 @@ public class GHMemcached {
 		if(memcachedClinet == null){
 			logger.debug("init memcached client object");
 			try {
-				memcachedClinet = new XMemcachedClient("192.168.6.192",10001);
+				memcachedClinet = new XMemcachedClient("memcached.server",10001);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
