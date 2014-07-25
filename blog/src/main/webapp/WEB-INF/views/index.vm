@@ -8,6 +8,8 @@
 		<meta name="description" content="mobile first, app, web app, responsive, admin dashboard, flat, flat ui">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="styles/font.css">
+			
+		
 		<link rel="stylesheet" href="styles/app.v2.css" type="text/css" />
 		<!--[if lt IE 9]>
 			<script src="js/ie/respond.min.js">
@@ -249,130 +251,46 @@
 			<!-- /.sidebar -->
 			<!-- .main -->
 			<section class="main">
-				<div class="bg-primary clearfix padder m-b">
-					<h3 class="m-b">
-						Mobile first web app for startup
-					</h3>
+		<div>
+			<article role="article">
+				<div id="blog-archives">
+				
+				#foreach($contact in $list)
+					#if($curYear!=$contact.year)
+						<h2>$contact.year</h2>
+						#set($curYear=$contact.year)
+					#end
+
+					
+					<article>
+  
+					<h1 class="entry-title">
+					<a href="./${contact.year}/${contact.iMonth}/${contact.day}/${contact.smallTitle}/">$contact.title</a>
+					
+					</h1>
+					
+					<time datetime="${contact.date}" pubdate=""><span class="month">$contact.month</span> <span class="day">$contact.day</span> <span class="year">$contact.year</span></time>
+					<footer>
+					  
+					  
+
+					</footer>
+					
+					</article>
+				#end
 				</div>
-				<div class="text-small padder">
-					<div class="block clearfix">
-						<a href="#" class="thumb-mini inline">
-							<img src="images/avatar.jpg" class="img-circle">
-						</a>
-						Mika Sokeil &lt;mica_sokeil@gmail.com&gt; to me
-						<div class="pull-right inline">
-							May 12 (
-							<em>
-								4 days ago
-							</em>
-							)
-							<a href="#" data-toggle="class">
-								<i class="fa fa-star-o text-muted fa-lg text">
-								</i>
-								<i class="fa fa-star text-warning fa-lg text-active">
-								</i>
-							</a>
-							<div class="btn-group">
-								<button class="btn btn-white btn-xs" data-toggle="tooltip" data-title="Reply">
-									<i class="fa fa-reply">
-									</i>
-								</button>
-								<button class="btn btn-white btn-xs dropdown-toggle" data-toggle="dropdown">
-									<span class="caret">
-									</span>
-								</button>
-								<ul class="dropdown-menu pull-right">
-									<li>
-										<a href="#">
-											<i class="fa fa-reply">
-											</i>
-											Reply
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i class="fa fa-sign-out">
-											</i>
-											Forward
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Add Mika Sokeil to contact list
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Mark as unread
-										</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										<a href="#">
-											Delete this message
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Report spam
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<p>
-						Mr. Soe
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque
-						quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper
-						sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.
-						Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum
-						nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis,
-						lectus arcu malesuada sem, dapibus porta quam lacus eu neque.
-					</p>
-					<blockquote>
-						<em>
-							Morbi nec nunc condimentum, egestas dui nec, fermentum diam. Vivamus vel
-							tincidunt libero, vitae elementum ligula. Nunc placerat purus quam, ac
-							adipiscing arcu rutrum eu. Vestibulum adipiscing ut augue ut auctor. Vestibulum
-							nec lorem imperdiet nibh mollis gravida ut a justo.
-							<br>
-							<br>
-							Suspendisse arcu nulla, mollis sed eros id, pellentesque vulputate nulla.
-							Nullam lectus dolor, pulvinar eu tristique nec, tempus ut ligula. Quisque
-							pulvinar ut justo id dapibus. Duis convallis tellus faucibus nisl fermentum,
-							nec semper massa adipiscing. Pellentesque habitant morbi tristique senectus
-							et netus et malesuada fames ac turpis egestas. In vestibulum est vel elementum
-							pellentesque.
-						</em>
-					</blockquote>
-					<p>
-						Duis non malesuada est, quis congue nibh. Pellentesque habitant morbi
-						tristique senectus et netus et malesuada fames ac turpis egestas.
-					</p>
-					<p>
-						Best Regards
-						<br>
-						Mical
-					</p>
-				</div>
-				<div class="padder">
-					<form class="panel text-small">
-						<div class="panel-body">
-							Click here to
-							<a href="#">
-								Reply
-							</a>
-							or
-							<a href="#">
-								Forward
-							</a>
-						</div>
-					</form>
-				</div>
+					<ul style="list-style:none;text-align:center;margin-top:30px;">
+				<li style="display:inline;">
+				
+					<a href="./page/2/" style="float:left;">← 较旧的日志</a>
+			
+				</li>
+
+			</ul>
+			</article>
+	
+		</div>
+				
 			</section>
 			<!-- /.main -->
 

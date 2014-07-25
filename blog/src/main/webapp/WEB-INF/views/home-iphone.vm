@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>海眼看天下 </title>
+	<link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+
+</head>
+<body class="home blog group-blog">
+
+<div id="main">
+	<div id="content">
+		<div>
+			<article role="article">
+				<div id="blog-archives">
+				
+				#foreach($contact in $list)
+					#if($curYear!=$contact.year)
+						<h2>$contact.year</h2>
+						#set($curYear=$contact.year)
+					#end
+
+					
+					<article>
+  
+					<h1 class="entry-title">
+					<a href="./${contact.year}/${contact.iMonth}/${contact.day}/${contact.smallTitle}/">$contact.title</a>
+					
+					</h1>
+					
+					<time datetime="${contact.date}" pubdate=""><span class="month">$contact.month</span> <span class="day">$contact.day</span> <span class="year">$contact.year</span></time>
+					<footer>
+					  
+					  
+
+					</footer>
+					
+					</article>
+				#end
+				</div>
+					<ul style="list-style:none;text-align:center;margin-top:30px;">
+				<li style="display:inline;">
+				
+					<a href="./page/2/" style="float:left;">← 较旧的日志</a>
+			
+				</li>
+
+			</ul>
+			</article>
+	
+		</div>
+		
+		
+		
+
+	</div>
+</div>
+
+
+<footer class="blog-footer" role="contentinfo"><p>
+  © 2014 Guohai.
+
+
+</p>
+
+</footer>
+</body>
+</html>

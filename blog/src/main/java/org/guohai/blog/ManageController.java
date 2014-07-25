@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.guohai.blog.bll.ContactBLL;
 import org.guohai.blog.bll.UserBLL;
 import org.guohai.blog.model.Contact;
-import org.guohai.blog.model.PostContact;
 import org.guohai.blog.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

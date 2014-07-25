@@ -52,4 +52,5 @@ public class ContactBLL {
 		contactDAO.insertPost(contact);
 	}
 	
+
 }

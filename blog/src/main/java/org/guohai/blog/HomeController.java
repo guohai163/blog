@@ -7,13 +7,14 @@ import java.util.Locale;
 import org.guohai.blog.bll.ContactBLL;
 import org.guohai.blog.dao.ContactDAO;
 import org.guohai.blog.model.Contact;
-
+import org.guohai.util.Utility;
 import org.markdownj.MarkdownProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -33,14 +34,17 @@ public class HomeController {
 	 */
 	@SuppressWarnings("deprecation")
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-
+	public String home(@RequestHeader ("User-Agent") String userAgent,Locale locale, Model model) {
+		
+		logger.debug("User-Agent:"+userAgent);
+		
 		Date date = new Date();
-		//contactDAO = new ContactDAO();
-		//List<Contact> list = contactDAO.selectHomeList();
-		//model.addAttribute("list", list);
+		contactDAO = new ContactDAO();
+		List<Contact> list = contactDAO.selectHomeList();
+		model.addAttribute("list", list);
 		model.addAttribute("curYear", date.getYear() + 1);
-		return "index";
+
+		return Utility.GetPageTempleFromDevice(userAgent, "home");
 	}
 	
 	
