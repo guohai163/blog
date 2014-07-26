@@ -17,7 +17,7 @@ public class HttpXmlClient {
 		Resource resource = client.resource("http://uuid.gyyx.cn");
 		String response="";
 		try{
-			response = resource.accept("text/plain").get(String.class);
+			response = resource.accept("text/plain").get(String.class).replace("\"", "");
 
 			logger.debug("getuuid:"+response);
 		}finally{

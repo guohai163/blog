@@ -29,6 +29,7 @@ public class GHMemcached {
 				memcachedClinet = new XMemcachedClient("memcached.server",10001);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				logger.error(e.toString());
 				e.printStackTrace();
 			}
 		}

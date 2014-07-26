@@ -14,7 +14,9 @@
 	<logger name="org.guohai.blog">
 		<level value="debug" />
 	</logger>
-	
+	<logger name="org.guohai.util">
+		<level value="debug" />
+	</logger>
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
 		<level value="info" />

@@ -32,8 +32,18 @@ public class ManageController {
 	public String AddContact(@RequestBody Contact contact,@CookieValue(value = "User-Info") String userUUID) {
 		logger.debug("title is:"+contact.getTitle());
 		logger.debug("user uuid:"+userUUID);
+		//Get User Model
+		UserBLL userbll = new UserBLL();
+		User userModel = userbll.GetUserInfoByMemcached(userUUID);
+		if(userModel==null || userModel.getCode()==0){
+			return "manage/login";
+		}
+		
+		
 		//Contact contact = new Contact();
 		ContactBLL  contactBll = new ContactBLL();
+		
+		
 		contactBll.AddPost(contact);
 		return "manage/add-contact";
 	}

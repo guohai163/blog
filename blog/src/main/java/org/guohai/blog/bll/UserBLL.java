@@ -42,4 +42,9 @@ public class UserBLL{
 		client.set("CookieInfo|"+userUUID, 60*20, user);
 		return userUUID;
 	}
+	
+	public User GetUserInfoByMemcached(String uuid){
+		GHMemcached client= GHMemcached.getInstance();
+		return (User) client.get("CookieInfo|"+uuid);
+	}
 }
