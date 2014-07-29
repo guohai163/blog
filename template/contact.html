@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html class="no-touch">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>test</title>
+    
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/app.v2.css" />
+    <style type="text/css">
+        .jqstooltip {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            visibility: hidden;
+            background: rgb(0, 0, 0) transparent;
+            background-color: rgba(0,0,0,0.6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+            white-space: nowrap;
+            padding: 5px;
+            border: 1px solid white;
+            z-index: 10000;
+        }
+
+        .jqsfield {
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- hader -->
+    <header id="header " class="navbar">
+
+        <ul class="nav navbar-nav hidden-xs">
+            <li>
+                <div class="m-t-small">
+                    <a href="#" class="btn btn-sm btn-success">
+                        <i class="fa fa-paperclip"></i>Document
+
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="m-t-small">
+                    <a href="#" class="btn btn-sm btn-info">
+                        <i class="fa fa-picture-o"></i>Photo
+
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <form class="navbar-form pull-left shift" action="" data-toggle="shift:appendTo" data-target=".nav-primary">
+            <i class="fa fa-search text-muted"></i>
+            <input type="text" class="input-sm form-control" placeholder="Search" />
+        </form>
+
+
+    </header>
+    <!-- / header -->
+
+    <section style="width: 900px; padding-left: 10%;">
+        <header>
+            <h1>J2ee use memcahced tutorial</h1>
+            <p>Written Sat Jul 26 00:00 EDT 2014.</p>
+        </header>
+        <div>
+            <!-- contact -->
+            
+			<h3>What is Memcached?</h3>
+
+<p>Free &amp; open source, high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load.</p>
+
+<p>Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering.</p>
+
+<p>Memcached is simple yet powerful. Its simple design promotes quick deployment, ease of development, and solves many problems facing large data caches. Its API is available for most popular languages.</p>
+
+<h3>Install Memcache on Ubuntu 12.04</h3>
+
+<p>To start, install memcached via apt-get <br>
+<code>sudo apt-get install memcached</code></p>
+
+<p>Check Memcached run state <br>
+<code>netstat -lntp</code></p>
+
+<h3>J2EE project using XMemcached</h3>
+
+<p>We use XMemcached client for java.It is a high performance, easy to use multithreaded memcached client in java.</p>
+
+<p>We j2ee project use maven build,you can try it now:  </p>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.googlecode.xmemcached&lt;/groupId&gt;
+    &lt;artifactId&gt;xmemcached&lt;/artifactId&gt;
+    &lt;version&gt;2.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h3>Simple Example</h3>
+
+<pre><code>MemcachedClient client=new XMemcachedClient("host",11211);
+
+//store a value for one hour(synchronously).
+client.set("key",3600,someObject);
+//Retrieve a value.(synchronously).
+Object someObject=client.get("key");
+//Retrieve a value.(synchronously),operation timeout two seconds.
+someObject=client.get("key",2000);
+
+//Touch cache item ,update it's expire time to 10 seconds.
+boolean success=client.touch("key",10);
+
+//delete value
+client.delete("key");
+</code></pre>
+
+            <!-- / contact -->
+
+
+        </div>
+                <section class="panel-body ">
+            <div class="col-sm-6 m-b-xs">
+                <a href="#" class="btn btn-sm btn-success">
+                    <i class="fa fa-arrow-left"></i> 旧的文章
+                </a>
+            </div>
+            <div class="col-sm-6 m-b-xs">
+                <a href="#" class="btn btn-sm btn-warning pull-right">
+                    新的文章 <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </section>
+    <!-- footer -->
+    <footer id="footer">
+        <div class="text-center padder clearfix">
+            <p>
+                <small>Hai Guo copying right @ 2014 . Source code:<a href="https://github.com/guohai163/blog">https://github.com/guohai163/blog</a> </small>
+                <br />
+                <br />
+                <a href="http://twitter.com/freeguo" class="btn btn-xs btn-circle btn-twitter"><i class="fa fa-twitter"></i></a>
+                <a href="https://github.com/guohai163" class="btn btn-xs btn-circle btn-github"><i class="fa fa-github"></i></a>
+                <a href="#" class="btn btn-xs btn-circle btn-gplus"><i class="fa fa-google-plus"></i></a>
+            </p>
+        </div>
+    </footer>
+    <!-- / footer -->
+    <script src="js/app.v2.js"></script>
+</body>
+</html>
